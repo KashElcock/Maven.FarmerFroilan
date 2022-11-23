@@ -5,7 +5,5 @@ public interface AirCraft extends Vehicle<Pilot> {
 
     void mount(Pilot pilot);
 
-    void fly();
-
     void fertilize(CropRow cropRow);
 }
