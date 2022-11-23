@@ -26,4 +26,19 @@ public class HorseTest {
         //then: it whinnies
 //        assertEquals(expected, actual);
     }
+    @Test
+    public void isMountedTest(){
+//        //given: a horse and a farmer
+//        Horse horse = new Horse();
+//        Farmer farmer = new Farmer();
+//        //when: a farmer rides it
+//        Boolean actual = horse.isMounted();
+//        //then: then isMounted returns true
+    }
+    @Test
+    public void eatTest(){
+        //given a horse
+        //when he eats edible corn
+        //then the cropyield should go down
+    }
 }
