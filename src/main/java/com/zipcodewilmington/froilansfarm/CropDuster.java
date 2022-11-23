@@ -12,15 +12,19 @@ public class CropDuster extends FarmVehicle implements AirCraft {
         }
     }
 
-    public void fly() {
-
-    }
-
-    public void fertilize(CropRow cropRow) {
+    public void fertilize(Croprow cropRow) {
 
     }
 
     public boolean isMounted() {
         return mounted;
+    }
+
+    public void setMounted(boolean isMounted) {
+        mounted = isMounted;
+    }
+
+    public String makeNoise() {
+        return noise;
     }
 }

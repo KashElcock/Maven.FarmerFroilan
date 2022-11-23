@@ -12,7 +12,7 @@ public class Tractor extends FarmVehicle {
         }
     }
 
-    public void harvest(CropRow cropRow) {
+    public void harvest(Croprow cropRow) {
 
     }
 
@@ -20,7 +20,15 @@ public class Tractor extends FarmVehicle {
         return mounted;
     }
 
-    public Farmer getFarmer() {
+    public void setMounted(boolean isMounted) {
 
+    }
+
+    public Farmer getFarmer() {
+        return farmer;
+    }
+
+    public String makeNoise() {
+        return noise;
     }
 }
