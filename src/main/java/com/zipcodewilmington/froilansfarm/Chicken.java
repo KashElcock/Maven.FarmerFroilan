@@ -6,11 +6,10 @@ public class Chicken extends Animal{
 
     public void layEgg(){}
     public void yieldEgg(){}
-//    @Override
-//    public void eat(Edible corn){
-//
-//    }
+    public void makeNoise
 
 
+    public void makeNoise() {
+    }
 }
-//chicken can eat edibles of type corn and make noise
+//chicken can eat edibles of type corn and make noise "cluck"
