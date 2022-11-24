@@ -1,19 +1,16 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class CropDuster extends FarmVehicle implements AirCraft {
+public class CropDuster extends AirCraft<Pilot> {
     boolean mounted = false;
     String noise = "zoom, zoom, zoom";
-    Pilot pilot;
 
-    public void mount(Pilot pilot) {
-        if (!mounted) {
-            this.pilot = pilot;
-            mounted = true;
+    public void fertilize(Croprow croprow) {
+        if (mounted) {
+            //fertilize crop in croprow
         }
-    }
-
-    public void fertilize(Croprow cropRow) {
-
+        else {
+            System.out.println("There is no one in the plane!");
+        }
     }
 
     public boolean isMounted() {
