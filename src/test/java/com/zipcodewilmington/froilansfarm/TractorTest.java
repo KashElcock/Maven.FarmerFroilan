@@ -10,16 +10,12 @@ public class TractorTest {
         Farmer farmer = new Farmer();
         Croprow cropRow = new Croprow();
 
-        tractor.mount(farmer);
-
+        farmer.mount(tractor);
         tractor.harvest(cropRow);
 
         Assert.assertTrue(tractor.isMounted());
-        tractor.setMounted(false);
-        Assert.assertFalse(tractor.isMounted());
-
-        Farmer f1 = tractor.getFarmer();
-
         Assert.assertEquals("chugachuga", tractor.makeNoise());
+        Assert.assertTrue(tractor instanceof FarmVehicle);
+        farmer.disMount(tractor);
     }
 }

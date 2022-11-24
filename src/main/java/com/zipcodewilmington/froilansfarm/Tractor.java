@@ -1,19 +1,11 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class Tractor extends FarmVehicle {
-    Farmer farmer;
     String noise = "chugachuga";
     boolean mounted = false;
 
-    public void mount(Farmer farmer) {
-        if (!mounted) {
-            this.farmer = farmer;
-            mounted = true;
-        }
-    }
-
-    public void harvest(Croprow cropRow) {
-
+    public void harvest(Croprow croprow) {
+        //harvest crop in croprow
     }
 
     public boolean isMounted() {
@@ -21,11 +13,7 @@ public class Tractor extends FarmVehicle {
     }
 
     public void setMounted(boolean isMounted) {
-
-    }
-
-    public Farmer getFarmer() {
-        return farmer;
+        mounted = isMounted;
     }
 
     public String makeNoise() {

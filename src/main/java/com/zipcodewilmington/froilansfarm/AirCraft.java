@@ -1,9 +1,4 @@
 package com.zipcodewilmington.froilansfarm;
 
-public interface AirCraft extends Vehicle<Pilot> {
-    boolean mounted = false;
-
-    void mount(Pilot pilot);
-
-    void fertilize(CropRow cropRow);
+public abstract class AirCraft<Pilot extends Person> extends Vehicle<Pilot> {
 }

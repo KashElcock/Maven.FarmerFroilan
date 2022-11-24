@@ -7,18 +7,31 @@ public class CropDusterTest {
 
     @Test
     public void testCropDuster() {
+        Pilot pilot = new Pilot();
         CropDuster cd = new CropDuster();
         Croprow croprow = new Croprow();
 
-        cd.mount(new Pilot());
-        Assert.assertTrue(cd.mounted);
+        pilot.mount(cd);
         cd.fertilize(croprow);
 
-        cd.isMounted();
+        Assert.assertTrue(cd.mounted);
+        Assert.assertEquals("One small step for man...", pilot.makeNoise());
+        Assert.assertEquals("zoom, zoom, zoom", cd.makeNoise());
+        Assert.assertTrue(cd instanceof AirCraft);
 
-        cd.setMounted(false);
-        Assert.assertFalse(cd.mounted);
-        String actNoise = cd.makeNoise();
-        Assert.assertEquals("zoom zoom zoom", actNoise);
+        Pilot p2 = new Pilot();
+        p2.mount(cd);
+        pilot.disMount(cd);
+    }
+
+    @Test
+    public void testIfElse() {
+        Pilot pilot = new Pilot();
+        CropDuster cd = new CropDuster();
+        Croprow croprow = new Croprow();
+
+        cd.fertilize(croprow);
+        cd.setMounted(true);
+        pilot.disMount(cd);
     }
 }
