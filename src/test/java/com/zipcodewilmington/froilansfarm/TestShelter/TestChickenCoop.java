@@ -54,14 +54,14 @@ public class TestChickenCoop {
 
     @Test
     public void  testGatherEggs_mixedFertilization(){
-        //given
+        //given 2 chickens one fertilized one not
         ChickenCoop coop = new ChickenCoop();
         Chicken chicken1 = new Chicken();
         Chicken chicken2 = new Chicken();
         chicken2.setHasBeenFertilized(true);
         coop.add(chicken1);
         coop.add(chicken2);
-        //when
+        //when 
         List<EdibleEgg> actual = coop.gatherEggs();
         int expected = 1;
         //then
