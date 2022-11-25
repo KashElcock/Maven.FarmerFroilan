@@ -26,6 +26,7 @@ public class TestStable {
         stable.add(horse1);
         stable.add(horse2);
         stable.feedHorses(new EarCorn(), new EarCorn(), new EarCorn());
+
     }
 
 }
