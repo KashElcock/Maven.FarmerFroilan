@@ -7,13 +7,6 @@ public class Stable extends Shelter<Horse> {
     public Stable() {
     }
 
-    @Override
-    public String toString() {
-        return "Stable{" +
-                "modCount=" + modCount +
-                '}';
-    }
-
     public void feedHorses(EarCorn... earCorns) {
         for (Horse horse: this
              ) {
