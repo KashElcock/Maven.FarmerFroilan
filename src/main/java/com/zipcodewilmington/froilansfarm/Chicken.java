@@ -16,18 +16,16 @@ public class Chicken extends Produce implements Animal{
         super();
     }
     public Edible yield(){
-//        if(!getHasBeenFertilized()){
-//            return new EdibleEgg();
-//        } else {
-//            return ;
-//        }
-        return new EdibleEgg();
+        if(!getHasBeenFertilized()){
+            return new EdibleEgg();
+        } else {
+            return new Chicken();
+        }
+
     }
     public List<Edible> getFoodEaten(){
         return foodEaten;
     }
-
-    public void layEgg(){}
 
 
 
@@ -45,7 +43,7 @@ public class Chicken extends Produce implements Animal{
 
 
     public void eat(Edible crop) {
-
+        foodEaten.add(crop);
     }
 
     public String getName() {
