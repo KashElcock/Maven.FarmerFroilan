@@ -6,10 +6,11 @@ public class Chicken extends Animal{
 
     public void layEgg(){}
     public void yieldEgg(){}
-    public void makeNoise
+   // public void makeNoise
 
 
-    public void makeNoise() {
+    public String makeNoise() {
+        return "cluck-cluck";
     }
 }
 //chicken can eat edibles of type corn and make noise "cluck"

@@ -11,4 +11,8 @@ public class Horse extends Animal implements Rideable{
     public void setMounted(boolean isMounted) {
 
     }
+
+    public String makeNoise() {
+        return "Hee-Haw";
+    }
 }
