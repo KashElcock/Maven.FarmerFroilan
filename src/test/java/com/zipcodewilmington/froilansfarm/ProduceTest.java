@@ -1,19 +1,27 @@
 package com.zipcodewilmington.froilansfarm;
 
 import junit.framework.TestCase;
+import org.junit.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProduceTest extends TestCase {
 
     public void testGetHasBeenFertilized() {
-     //  Crop c1 = new Crop();
-      //  p1.getHasBeenFertilized();
 
+       TomatoPlant tp = new TomatoPlant();
+
+         tp.setHasBeenFertilized(true);
+        Assert.assertEquals(true,tp.getHasBeenFertilized());
     }
 
     public void testSetHasBeenFertilized() {
-    }
 
-    public void testYield() {
+        TomatoPlant tp = new TomatoPlant();
+
+        tp.setHasBeenFertilized(true);
+        Assert.assertEquals(true,tp.getHasBeenFertilized());
     }
 
 }
