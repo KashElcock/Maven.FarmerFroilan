@@ -1,15 +1,11 @@
 package com.zipcodewilmington.froilansfarm;
 
 //implements NoiseMaker, Eater
-public abstract class Animal implements NoiseMaker{
-    String name;
-//    public Animal(String name){}
+interface Animal extends NoiseMaker, Eater{
 
-    public String getName() {
-        return name;
-    }
+//    Animal is now an interface so chicken can extend produce instead.
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    String getName();
+
+    void setName(String name);
 }
