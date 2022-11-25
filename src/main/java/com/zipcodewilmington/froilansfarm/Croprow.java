@@ -30,7 +30,7 @@ public class Croprow <T extends Crop>{
         crops.remove(crop);
 
     }
-    public void plowCrop(T crop){
+    public void plowCrop(){
         crops.clear();
     }
 

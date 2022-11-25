@@ -8,12 +8,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CroprowTest extends TestCase {
+
+
+
 @Test
     public void testGetCrops() {
+    Croprow cr = new Croprow();
+    TomatoPlant tp = new TomatoPlant();
+    List<Crop> crlist = new ArrayList<Crop>();
+    crlist.add(tp);
+    cr.setCrops(crlist);
+    System.out.println(cr.getCrops().get(0));
+     Assert.assertNotNull(cr.getCrops());
+
+     Assert.assertSame(tp,cr.getCrops().get(0));
+    }
+    public void testSetCrops() {
+        Croprow cr = new Croprow();
+        TomatoPlant tp = new TomatoPlant();
+        List<Crop> crlist = new ArrayList<Crop>();
+        crlist.add(tp);
+        cr.setCrops(crlist);
+        System.out.println(cr.getCrops().get(0));
+        Assert.assertNotNull(cr.getCrops());
+
+        Assert.assertSame(tp,cr.getCrops().get(0));
 
     }
 @Test
-    public void testPlantCrop() {
+    public void testPlantCrop1() {
 
     Croprow cr = new Croprow();
     TomatoPlant tp = new TomatoPlant();
@@ -49,19 +72,54 @@ public class CroprowTest extends TestCase {
     System.out.println(cr.getCrops());
     Assert.assertEquals(4,crlist.size());
 
-    cr.plowCrop(tp);
+    cr.plowCrop();
     System.out.println(cr.getCrops());
 
     Assert.assertEquals(0,crlist.size());
 
     }
+    @Test
+    public void testPlantCrop() {
+        Croprow cr = new Croprow();
+        TomatoPlant tp = new TomatoPlant();
+        CornStalk cs = new CornStalk();
+        CarrotPlant cp = new CarrotPlant();
 
-    public void testSetCrops() {
+        cr.plantCrop(tp);
+        cr.plantCrop(cs);
+        cr.plantCrop(cp);
+        System.out.println(cr.getCrops());
+        Assert.assertEquals(3,cr.getCrops().size());
+
     }
 
     public void testHarvestCrop() {
+        Croprow cr = new Croprow();
+        TomatoPlant tp = new TomatoPlant();
+        CornStalk cs = new CornStalk();
+        CarrotPlant cp = new CarrotPlant();
+
+        cr.plantCrop(tp);
+        cr.plantCrop(cs);
+        cr.plantCrop(cp);
+        System.out.println(cr.getCrops());
+        cr.harvestCrop(tp);
+        System.out.println(cr.getCrops());
+        Assert.assertEquals(2,cr.getCrops().size());
+
     }
 
     public void testPlowCrop() {
+    Croprow cr = new Croprow();
+    TomatoPlant tp = new TomatoPlant();
+    CornStalk cs  = new CornStalk();
+    CarrotPlant cp = new CarrotPlant();
+    cr.plantCrop(tp);
+    cr.plantCrop(cs);
+    cr.plantCrop(cp);
+    cr.plowCrop();
+        System.out.println(cr.getCrops());
+        Assert.assertEquals(0,cr.getCrops().size());
+
     }
 }

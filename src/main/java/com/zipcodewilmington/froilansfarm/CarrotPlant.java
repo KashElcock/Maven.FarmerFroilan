@@ -6,7 +6,7 @@ public class CarrotPlant extends Crop <Carrot>{
     }
 
     public Carrot yield() {
-        return null;
+        return new Carrot();
     }
 
     public boolean isEdible() {
