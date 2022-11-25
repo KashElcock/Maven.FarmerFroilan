@@ -2,6 +2,8 @@ package com.zipcodewilmington.froilansfarm;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class HorseTest {
@@ -45,17 +47,18 @@ public class HorseTest {
         //when: a farmer dismounts
         farmer.disMount(horse);
         Boolean actual = horse.isMounted();
-        //then: then isMounted returns true
+        //then: then isMounted returns false
         assertFalse(actual);
     }
     @Test
     public void eatTest(){
         //given a horse and harvested cornstalks
-//        Horse horse = new Horse();
+        Horse horse = new Horse();
         //when he eats edible corn
-//        Edible cornStalk = new CornStalk();
-//        horse.eat(cornStalk.harvest());
-//        cornStalk.getCropYield();
-        //then the cropyield should go down??
+        Edible earCorn = new EarCorn();
+        horse.eat(earCorn);
+        horse.eat(earCorn);
+        //then the food he ate gets added to a list
+        assertTrue(horse.getFoodEaten().size() == 2);
     }
 }

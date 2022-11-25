@@ -40,9 +40,31 @@ public class ChickenTest {
 
     }
     @Test
-    public void yieldEggTest(){
-        //given
-        //when
-        //then
+    public void yieldTest(){
+        //given a fertilized chicken
+        chicken.setHasBeenFertilized(true);
+        //when you call the method
+        //then test to see if it is an instance of chicken
+        assertTrue(chicken.yield() instanceof Chicken);
+    }
+    @Test
+    public void yieldTest1(){
+        //given a fertilized chicken
+        chicken.setHasBeenFertilized(false);
+        //when you call the method
+        //then test to see if it is an instance of chicken
+        assertTrue(chicken.yield() instanceof EdibleEgg);
+    }
+
+    @Test
+    public void eatTest(){
+        //given a horse and harvested cornstalks
+        //when he eats edible corn
+        Edible earCorn = new EarCorn();
+        chicken.eat(earCorn);
+        chicken.eat(earCorn);
+        chicken.eat(earCorn);
+        //then the food he ate gets added to a list
+        assertTrue(chicken.getFoodEaten().size() == 3);
     }
 }

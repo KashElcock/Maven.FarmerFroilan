@@ -66,9 +66,3 @@ public class Chicken extends Produce implements Animal{
     }
 }
 //chicken can eat edibles of type corn and make noise "cluck"
-
-//my confusion is, where are chickens getting fertilized...
-//or are eggs getting fertilized?
-//also the amount of chickens that go in the coop are dependent on the amount of
-//edible eggs. if an egg is not edible then it is a chicken. Yielded eggs are edible eggs.
-//also does each chicken just lay one egg?
