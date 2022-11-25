@@ -15,11 +15,7 @@ public class Horse implements Rideable, Animal{
         return "Whinny";
     }
 
-    public void eat(Crop corn){
-
-    }
-
-    public void eat(Edible crop) {
+    public void eat(Edible earCorn) {
 
     }
 

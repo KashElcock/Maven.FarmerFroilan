@@ -24,7 +24,7 @@ public class ChickenTest {
     public void makeNoiseTest(){
         //given: a chicken
         //when: you tell it to make noise
-        String expected = "Cluck";
+        String expected = "Cluck cluck";
         String actual = chicken.makeNoise();
         //then: it clucks
         assertEquals(expected, actual);
