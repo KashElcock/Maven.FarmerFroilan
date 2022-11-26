@@ -33,4 +33,6 @@ public class Horse implements Rideable, Animal{
     public void setName(String name) {
         this.name = name;
     }
+
+    // Integer rideMiles = 0; for testing purposes
 }
