@@ -1,4 +1,4 @@
 package com.zipcodewilmington.froilansfarm;
 
-public interface Omnivore<Edible> {
+public interface Omnivore <Edible> {
 }

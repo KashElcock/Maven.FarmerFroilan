@@ -3,7 +3,7 @@ package com.zipcodewilmington.froilansfarm;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Person implements Omnivore, NoiseMaker{
+public abstract class Person implements Eater<Edible>, NoiseMaker{
     private List<Edible> foodEaten = new ArrayList<Edible>();
 
     public List<Edible> getFoodEaten() {
