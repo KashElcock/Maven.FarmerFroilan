@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Pilot extends Person implements Rider<AirCraft,Horse>{
+public class Pilot<F extends Person> extends Person implements Rider<AirCraft>{
     String noise = "One small step for man...";
 
     public Pilot() {
