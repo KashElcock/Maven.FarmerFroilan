@@ -1,5 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Shelter;
 
+import com.zipcodewilmington.froilansfarm.CropDuster;
+import com.zipcodewilmington.froilansfarm.Tractor;
+
 public class Farm {
 
     private Field field;

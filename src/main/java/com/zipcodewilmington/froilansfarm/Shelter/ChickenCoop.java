@@ -1,15 +1,18 @@
 package com.zipcodewilmington.froilansfarm.Shelter;
 
-import com.zipcodewilmington.froilansfarm.Chicken;
-import com.zipcodewilmington.froilansfarm.EarCorn;
-import com.zipcodewilmington.froilansfarm.Edible;
-import com.zipcodewilmington.froilansfarm.EdibleEgg;
+import com.zipcodewilmington.froilansfarm.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ChickenCoop extends Shelter<Chicken> {
     public ChickenCoop() {
+    }
+
+    public void fill(int numToFill) {
+        for (int i = 1; i <= numToFill; i++) {
+            this.add(new Chicken());
+        }
     }
 
     public List<EdibleEgg> gatherEggs() {

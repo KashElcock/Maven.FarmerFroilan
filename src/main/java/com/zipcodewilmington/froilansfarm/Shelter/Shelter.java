@@ -5,4 +5,5 @@ import java.util.ArrayList;
 public  abstract class  Shelter<T> extends ArrayList<T> {
     public Shelter() {
     }
+    public abstract void fill(int numToFill);
 }
