@@ -4,7 +4,7 @@ public class Farmer extends Person implements Rider<Rideable>, Botanist{
     String noise = "YeeHaw!";
 
     public void plant(Crop crop, Croprow croprow) {
-
+        croprow.plantCrop(crop);
     }
 
     public String makeNoise() {

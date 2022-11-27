@@ -8,8 +8,8 @@ public class Chicken extends Produce implements Animal{
     //fertilized egg turns to edible object
     String name;
     int amountOfEggs;
-    int amountOfChickens;
     List<Edible> foodEaten = new ArrayList<Edible>();
+    List<Chicken> chickens = new ArrayList();
     int egg;
 
     public Chicken(){
@@ -33,14 +33,19 @@ public class Chicken extends Produce implements Animal{
         return "Cluck cluck";
     }
 
-    public static List<Chicken> makeChickens(int amountOfChickens){
-        List<Chicken> chickens = new ArrayList<Chicken>();
-        for (int i = 0; i <= amountOfChickens; i++){
+    public void makeChickens(int amountOfChickens){
+        for (int i = 0; i < amountOfChickens; i++){
             chickens.add(new Chicken());
         }
-        return chickens;
     }
 
+    public int getAmountOfChickens() {
+        return chickens.size();
+    }
+
+    public List<Chicken> getChickens() {
+        return chickens;
+    }
 
     public void eat(Edible crop) {
         foodEaten.add(crop);
@@ -53,6 +58,7 @@ public class Chicken extends Produce implements Animal{
     public void setName(String name) {
         this.name = name;
     }
+
     public int getAmountOfEggs() {
         return amountOfEggs;
     }

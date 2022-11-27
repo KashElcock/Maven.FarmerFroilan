@@ -6,7 +6,7 @@ public class CropDuster extends AirCraft<Pilot> {
 
     public void fertilize(Croprow croprow) {
         if (mounted) {
-            //fertilize crop in croprow
+            croprow.fertilize();
         }
         else {
             System.out.println("There is no one in the plane!");

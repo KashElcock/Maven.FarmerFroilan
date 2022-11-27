@@ -10,6 +10,7 @@ public class TractorTest {
         Farmer farmer = new Farmer();
         Croprow cropRow = new Croprow();
 
+        cropRow.plantCrop(new TomatoPlant());
         farmer.mount(tractor);
         tractor.harvest(cropRow);
 
