@@ -62,7 +62,7 @@ public class CroprowTest extends TestCase {
         Croprow cr = new Croprow();
         CornStalk cs = new CornStalk();
         CropDuster cd = new CropDuster();
-        Pilot p = new Pilot();
+        Pilot<Person> p = new Pilot<Person>();
         p.mount(cd);
 
         cr.plantCrop(cs);

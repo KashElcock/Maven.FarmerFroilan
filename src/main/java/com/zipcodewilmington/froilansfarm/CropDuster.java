@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class CropDuster extends AirCraft<Pilot> {
+public class CropDuster extends AirCraft<Pilot<Person>> {
     boolean mounted = false;
     String noise = "zoom, zoom, zoom";
 

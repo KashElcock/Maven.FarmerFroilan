@@ -17,7 +17,7 @@ public class TestFarmHouse {
     public void testFeedHouseMember(){
         //given
         Person p = new Farmer();
-        Person p2 = new Pilot();
+        Person p2 = new Pilot<Person>();
         FarmHouse house = new FarmHouse();
         house.add(p);
         house.add(p2);
