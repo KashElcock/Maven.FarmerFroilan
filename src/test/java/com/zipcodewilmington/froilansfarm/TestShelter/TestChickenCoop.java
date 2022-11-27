@@ -67,5 +67,15 @@ public class TestChickenCoop {
         //then
         Assert.assertEquals(expected,actual.size());
     }
+    @Test
+    public void testFill(){
+        //given
+        ChickenCoop coop = new ChickenCoop();
+        int expected = 5;
+        //when
+        coop.fill(expected);
+        //then
+        Assert.assertEquals(expected,coop.size());
+    }
 
 }

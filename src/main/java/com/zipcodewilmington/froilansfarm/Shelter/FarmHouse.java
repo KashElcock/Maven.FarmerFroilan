@@ -8,6 +8,10 @@ public class FarmHouse extends Shelter<Person>{
     public FarmHouse() {
     }
 
+    public void fill(int numToFill) {
+
+    }
+
     public void feedHouseMember(Person householdMember, Edible... edibles) {
         if(this.contains(householdMember)){
             for (Edible foodItem: edibles

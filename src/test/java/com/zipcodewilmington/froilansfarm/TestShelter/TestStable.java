@@ -47,6 +47,16 @@ public class TestStable {
         Assert.assertEquals(horse1.getFoodEaten().size(),1);
         Assert.assertEquals(horse2.getFoodEaten().size(),1);
     }
+    @Test
+    public void testFill(){
+        //given
+        Stable stable = new Stable();
+        int expected = 5;
+        //when
+        stable.fill(expected);
+        //then
+        Assert.assertEquals(expected,stable.size());
+    }
 
 
 }
