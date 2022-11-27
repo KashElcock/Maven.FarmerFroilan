@@ -29,6 +29,11 @@ public class CropDusterTest {
         Pilot pilot = new Pilot();
         CropDuster cd = new CropDuster();
         Croprow croprow = new Croprow();
+//        Pilot<Farmer> froilanda = new Pilot<Farmer>();
+//        Horse horse = new Horse();
+//
+//        froilanda.mount(horse);
+//        froilanda.disMount(horse);
 
         cd.fertilize(croprow);
         cd.setMounted(true);
