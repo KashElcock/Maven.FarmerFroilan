@@ -1,10 +1,7 @@
 package com.zipcodewilmington.froilansfarm.WeekOnTheFarm;
 
 import com.zipcodewilmington.froilansfarm.*;
-import com.zipcodewilmington.froilansfarm.Shelter.ChickenCoop;
-import com.zipcodewilmington.froilansfarm.Shelter.Farm;
-import com.zipcodewilmington.froilansfarm.Shelter.FarmHouse;
-import com.zipcodewilmington.froilansfarm.Shelter.Stable;
+import com.zipcodewilmington.froilansfarm.Shelter.*;
 import org.junit.Test;
 
 public class WednesdayTest {
