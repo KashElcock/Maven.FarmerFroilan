@@ -1,39 +1,35 @@
 package com.zipcodewilmington.froilansfarm;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Croprow <T extends Crop>{
 
-    private List<T> crops;
+    private T crop;
+    boolean fertilized = false;
 
     public Croprow(){
-        crops = new ArrayList<T>();
     }
 
-    public List<T> getCrops() {
-
-        return crops;
+    public T getCrop() {
+        return crop;
     }
 
-    public void setCrops(List<T> crops) {
-
-        this.crops = crops;
+    public void fertilize() {
+        this.fertilized = true;
     }
 
     public void plantCrop(T crop){
-        crops.add(crop);
+        this.crop = crop;
     }
 
-    public void harvestCrop(T crop){
-
-        crops.remove(crop);
+    public void harvestCrop(){
+        if (fertilized) {
+            crop.yield();
+            crop = null;
+        }
+        System.out.println("You can't harvest the crop until it has been fertilized.");
 
     }
     public void plowCrop(){
-        crops.clear();
+        crop = null;
     }
-
-
 }
 

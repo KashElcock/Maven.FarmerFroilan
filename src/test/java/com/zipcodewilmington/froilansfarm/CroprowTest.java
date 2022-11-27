@@ -4,53 +4,33 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CroprowTest extends TestCase {
 
-
-
-@Test
+    @Test
     public void testGetCrops() {
-    Croprow cr = new Croprow();
-    TomatoPlant tp = new TomatoPlant();
-    List<Crop> crlist = new ArrayList<Crop>();
-    crlist.add(tp);
-    cr.setCrops(crlist);
-    System.out.println(cr.getCrops().get(0));
-     Assert.assertNotNull(cr.getCrops());
-
-     Assert.assertSame(tp,cr.getCrops().get(0));
-    }
-    public void testSetCrops() {
         Croprow cr = new Croprow();
         TomatoPlant tp = new TomatoPlant();
-        List<Crop> crlist = new ArrayList<Crop>();
-        crlist.add(tp);
-        cr.setCrops(crlist);
-        System.out.println(cr.getCrops().get(0));
-        Assert.assertNotNull(cr.getCrops());
 
-        Assert.assertSame(tp,cr.getCrops().get(0));
+        cr.plantCrop(tp);
+        System.out.println(cr.getCrop());
+        Assert.assertNotNull(cr.getCrop());
 
+        Assert.assertSame(tp,cr.getCrop());
     }
-@Test
+
+    @Test
     public void testPlantCrop1() {
 
-    Croprow cr = new Croprow();
+    Croprow cr1 = new Croprow();
+    Croprow cr2 = new Croprow();
+    Croprow cr3 = new Croprow();
     TomatoPlant tp = new TomatoPlant();
     CornStalk cs = new CornStalk();
     CarrotPlant cp = new CarrotPlant();
 
-    List<Crop> crlist = new ArrayList<Crop>();
-    crlist.add(tp);
-    crlist.add(cs);
-    crlist.add(cp);
-    cr.setCrops(crlist);
-
-    System.out.println(cr.getCrops());
-    Assert.assertEquals(3,crlist.size());
+    cr1.plantCrop(tp);
+    cr2.plantCrop(cs);
+    cr3.plantCrop(cp);
 
     tp.setHasBeenFertilized(true);
     System.out.println(tp.getHasBeenFertilized());
@@ -62,64 +42,48 @@ public class CroprowTest extends TestCase {
     tp.setHasBeenHarvested(true);
     System.out.println(tp.isHasBeenHarvested());
 
-    cr.plantCrop(tp);
-    System.out.println(cr.getCrops());
+    cr1.plowCrop();
+    System.out.println(cr1.getCrop());
 
-    cr.harvestCrop(tp);
-    System.out.println(cr.getCrops());
-
-    cr.plantCrop(tp);
-    System.out.println(cr.getCrops());
-    Assert.assertEquals(4,crlist.size());
-
-    cr.plowCrop();
-    System.out.println(cr.getCrops());
-
-    Assert.assertEquals(0,crlist.size());
+    Assert.assertEquals(null, cr1.getCrop());
 
     }
     @Test
     public void testPlantCrop() {
         Croprow cr = new Croprow();
-        TomatoPlant tp = new TomatoPlant();
-        CornStalk cs = new CornStalk();
         CarrotPlant cp = new CarrotPlant();
 
-        cr.plantCrop(tp);
-        cr.plantCrop(cs);
         cr.plantCrop(cp);
-        System.out.println(cr.getCrops());
-        Assert.assertEquals(3,cr.getCrops().size());
 
+        Assert.assertNotNull(cr.getCrop());
     }
 
     public void testHarvestCrop() {
         Croprow cr = new Croprow();
-        TomatoPlant tp = new TomatoPlant();
         CornStalk cs = new CornStalk();
-        CarrotPlant cp = new CarrotPlant();
+        CropDuster cd = new CropDuster();
+        Pilot p = new Pilot();
+        p.mount(cd);
 
-        cr.plantCrop(tp);
         cr.plantCrop(cs);
-        cr.plantCrop(cp);
-        System.out.println(cr.getCrops());
-        cr.harvestCrop(tp);
-        System.out.println(cr.getCrops());
-        Assert.assertEquals(2,cr.getCrops().size());
+        System.out.println(cr.getCrop());
+        cd.fertilize(cr);
+        cr.harvestCrop();
+
+        System.out.println(cr.getCrop());
+        Assert.assertNull(cr.getCrop());
 
     }
 
     public void testPlowCrop() {
     Croprow cr = new Croprow();
     TomatoPlant tp = new TomatoPlant();
-    CornStalk cs  = new CornStalk();
-    CarrotPlant cp = new CarrotPlant();
+
     cr.plantCrop(tp);
-    cr.plantCrop(cs);
-    cr.plantCrop(cp);
     cr.plowCrop();
-        System.out.println(cr.getCrops());
-        Assert.assertEquals(0,cr.getCrops().size());
+
+    System.out.println(cr.getCrop());
+    Assert.assertNull(cr.getCrop());
 
     }
 }

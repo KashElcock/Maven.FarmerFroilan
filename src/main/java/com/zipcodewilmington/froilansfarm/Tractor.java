@@ -5,7 +5,7 @@ public class Tractor extends FarmVehicle {
     boolean mounted = false;
 
     public void harvest(Croprow croprow) {
-        //harvest crop in croprow
+        croprow.harvestCrop();
     }
 
     public boolean isMounted() {

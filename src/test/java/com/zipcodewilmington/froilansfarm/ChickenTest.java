@@ -65,6 +65,15 @@ public class ChickenTest {
         chicken.eat(earCorn);
         chicken.eat(earCorn);
         //then the food he ate gets added to a list
-        assertTrue(chicken.getFoodEaten().size() == 3);
+        assertEquals(3, chicken.getFoodEaten().size());
+    }
+
+    @Test
+    public void makeChickensTest() {
+        Chicken pete = new Chicken();
+        pete.makeChickens(5);
+
+        assertEquals(5, pete.getAmountOfChickens());
+        assertEquals("Cluck cluck", pete.getChickens().get(0).makeNoise());
     }
 }
