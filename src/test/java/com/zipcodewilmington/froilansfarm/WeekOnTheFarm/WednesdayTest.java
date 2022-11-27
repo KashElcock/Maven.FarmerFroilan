@@ -2,55 +2,60 @@ package com.zipcodewilmington.froilansfarm.WeekOnTheFarm;
 
 import com.zipcodewilmington.froilansfarm.*;
 import com.zipcodewilmington.froilansfarm.Shelter.*;
+import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.List;
+
 public class WednesdayTest {
-    Farm farmMcFroilan = new Farm();
-    Farmer froilan = new Farmer();
-    Pilot friolanda = new Pilot();
-    CropDuster cropDuster = new CropDuster();
-    Tractor tractor = new Tractor();
-    Stable stable1 = new Stable();
-    Stable stable2 = new Stable();
-    Stable stable3 = new Stable();
-    ChickenCoop coop1 = new ChickenCoop();
-    ChickenCoop coop2 = new ChickenCoop();
-    ChickenCoop coop3 = new ChickenCoop();
-    ChickenCoop coop4 = new ChickenCoop();
-    FarmHouse house = new FarmHouse();
+
 
     @Test
     public void testDay(){
-        house.add(friolanda);
-        house.add(froilan);
-        stable1.fill(4);
-        stable2.fill(3);
-        stable3.fill(3);
-        coop1.fill(4);
-        coop2.fill(4);
-        coop3.fill(4);
-        coop4.fill(3);
-        for (Horse horse: stable1
+        //given this setup
+        MainApplication main = new MainApplication();
+        Farm farm = main.setUpFarm();
+        FarmHouse house = farm.getFarmhouse();
+        Farmer froilan = (Farmer) house.get(0);
+        Pilot<Farmer> froilanda = (Pilot<Farmer>) house.get(1);
+        //when a day is simulated
+        EarCorn[] horseMealExpected = {new EarCorn(), new EarCorn(), new EarCorn()};
+        for (Stable stable: farm.getStables()
              ) {
-            froilan.mount(horse);
-            friolanda.mount(horse);
+            stable.feedHorses(horseMealExpected);
         }
-        for (Horse horse: stable2
+        for(Stable stable: farm.getStables()){
+            for (Horse horse: stable
+                 ) {
+                froilan.mount(horse);
+                froilan.disMount(horse);
+                froilanda.mount(horse);
+            }
+        }
+        Edible[] expected1 = {new EarCorn(),new TomatoPlant(), new TomatoPlant(),
+                new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg()};
+        house.feedHouseMember(froilan,expected1);
+        Edible[] expected2 = {new EarCorn(), new EarCorn(), new TomatoPlant(),
+                new EdibleEgg(), new EdibleEgg()};
+        house.feedHouseMember(froilanda,expected2);
+        //then test Farmhouse was fed
+        Assert.assertArrayEquals(expected1,froilan.getFoodEaten().toArray());
+        Assert.assertArrayEquals(expected2,froilanda.getFoodEaten().toArray());
+        //test horses were fed
+        for (Stable stable: farm.getStables()
              ) {
-            froilan.mount(horse);
-            friolanda.mount(horse);
+            for (Horse horse: stable
+                 ) {
+                Assert.assertArrayEquals(horseMealExpected,horse.getFoodEaten().toArray());
+            }
         }
-        for (Horse horse: stable3
+        //test horses were rode
+        for (Stable stable: farm.getStables()
              ) {
-            froilan.mount(horse);
-            friolanda.mount(horse);
+            for (Horse horse: stable
+                 ) {
+                Assert.assertTrue(horse.isMounted());
+            }
         }
-        stable1.feedHorses(new EarCorn(), new EarCorn(), new EarCorn());
-        stable2.feedHorses(new EarCorn(), new EarCorn(), new EarCorn());
-        stable3.feedHorses(new EarCorn(), new EarCorn(), new EarCorn());
-        house.feedHouseMember(froilan,new EarCorn(),new TomatoPlant(), new TomatoPlant(),
-                new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg());
-        house.feedHouseMember(friolanda, new EarCorn(), new EarCorn(), new TomatoPlant(),
-                new EdibleEgg(), new EdibleEgg());
     }
 }
