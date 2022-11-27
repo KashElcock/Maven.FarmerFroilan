@@ -8,7 +8,7 @@ public class Croprow <T extends Crop>{
     public Croprow(){
     }
 
-    public T getCrop() {
+    public Crop getCrop() {
         return crop;
     }
 
@@ -26,8 +26,8 @@ public class Croprow <T extends Crop>{
             crop = null;
         }
         System.out.println("You can't harvest the crop until it has been fertilized.");
-
     }
+
     public void plowCrop(){
         crop = null;
     }

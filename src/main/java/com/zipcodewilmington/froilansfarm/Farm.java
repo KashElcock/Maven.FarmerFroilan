@@ -10,9 +10,9 @@ public class Farm {
     private Field field;
     private FarmStand farmStand;
     FarmHouse farmhouse;
-    ArrayList<Stable> stables = new ArrayList<Stable>();
-    ArrayList<ChickenCoop> chickenCoops = new ArrayList<ChickenCoop>();
-
+    ArrayList<Stable> stables = new ArrayList();
+    ArrayList<ChickenCoop> chickenCoops = new ArrayList();
+    ArrayList<Vehicle> vehicles = new ArrayList();
 
     public Farm(){
         field = new Field();
@@ -43,11 +43,35 @@ public class Farm {
         return this.owner;
     }
 
+    public void setFarmhouse(FarmHouse fh) {
+        this.farmhouse = fh;
+    }
+
+    public FarmHouse getFarmhouse() {
+        return this.farmhouse;
+    }
+
     public void addChickenCoop(ChickenCoop coop) {
         chickenCoops.add(coop);
     }
 
     public ArrayList<ChickenCoop> getChickenCoops() {
         return chickenCoops;
+    }
+
+    public void addStable(Stable stable) {
+        stables.add(stable);
+    }
+
+    public ArrayList<Stable> getStables() {
+        return stables;
+    }
+
+    public void addVehicle(Vehicle vehicle) {
+        vehicles.add(vehicle);
+    }
+
+    public ArrayList<Vehicle> getVehicles() {
+        return vehicles;
     }
 }
