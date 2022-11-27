@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Farmer extends Person implements Rider<Rideable>, Botanist{
+public class Farmer extends Person implements Rider<Rideable,Horse>, Botanist{
     String noise = "YeeHaw!";
 
     public void plant(Crop crop, Croprow croprow) {
