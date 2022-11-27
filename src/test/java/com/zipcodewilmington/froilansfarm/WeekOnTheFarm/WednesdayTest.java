@@ -36,17 +36,17 @@ public class WednesdayTest {
         for (Horse horse: stable1
              ) {
             froilan.mount(horse);
-            //friolanda.mount(horse); friolanda need to be able to ride horses
+            friolanda.mount(horse);
         }
         for (Horse horse: stable2
              ) {
             froilan.mount(horse);
-            //friolanda.mount(horse); friolanda need to be able to ride horses
+            friolanda.mount(horse);
         }
         for (Horse horse: stable3
              ) {
             froilan.mount(horse);
-            //friolanda.mount(horse); friolanda need to be able to ride horses
+            friolanda.mount(horse);
         }
         stable1.feedHorses(new EarCorn(), new EarCorn(), new EarCorn());
         stable2.feedHorses(new EarCorn(), new EarCorn(), new EarCorn());

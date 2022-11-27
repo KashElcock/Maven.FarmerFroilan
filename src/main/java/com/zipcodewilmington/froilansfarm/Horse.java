@@ -9,6 +9,9 @@ public class Horse implements Rideable, Animal{
     String name;
     List<Edible> foodEaten = new ArrayList<Edible>();
 
+    public Horse(){
+
+    }
     public boolean isMounted() {
         return mounted;
     }

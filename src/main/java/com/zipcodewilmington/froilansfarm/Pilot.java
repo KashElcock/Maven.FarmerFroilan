@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Pilot extends Person implements Rider<AirCraft> {
+public class Pilot extends Person implements Rider<AirCraft,Horse>{
     String noise = "One small step for man...";
 
     public Pilot() {
@@ -8,6 +8,19 @@ public class Pilot extends Person implements Rider<AirCraft> {
 
     public String makeNoise() {
         return noise;
+    }
+
+    public void mount(Horse horse) {
+        if (horse.isMounted()) {
+            System.out.println("Horse already mounted.");
+        }
+        else {
+            horse.setMounted(true);
+        }
+    }
+
+    public void disMount(Horse horse) {
+        horse.setMounted(false);
     }
 
     public void mount(AirCraft airCraft) {
