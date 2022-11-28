@@ -44,7 +44,7 @@ public class MondayTest {
         cropDuster.fertilize(cropRow);
 
         System.out.println("Have the crops been fertilized? " + cropRow.isFertilized());
-        
+
         //then test Farmhouse was fed
         Assert.assertArrayEquals(froilanRation,froilan.getFoodEaten().toArray());
         Assert.assertArrayEquals(froilandaRation,froilanda.getFoodEaten().toArray());
