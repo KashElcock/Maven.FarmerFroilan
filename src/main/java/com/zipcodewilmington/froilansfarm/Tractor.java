@@ -12,6 +12,10 @@ public class Tractor extends FarmVehicle {
         return mounted;
     }
 
+    public void isRidden(Person person) {
+
+    }
+
     public void setMounted(boolean isMounted) {
         mounted = isMounted;
     }

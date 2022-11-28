@@ -8,8 +8,6 @@ import org.junit.Test;
 import java.util.List;
 
 public class WednesdayTest {
-
-
     @Test
     public void testDay(){
         //given this setup
