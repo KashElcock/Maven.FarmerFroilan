@@ -6,10 +6,6 @@ import com.zipcodewilmington.froilansfarm.Shelter.Field;
 import com.zipcodewilmington.froilansfarm.Shelter.Stable;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class MondayTest {
     @Test
     public void TestDay() {
