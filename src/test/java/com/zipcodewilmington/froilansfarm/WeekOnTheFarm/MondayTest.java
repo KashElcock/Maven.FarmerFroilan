@@ -35,11 +35,13 @@ public class MondayTest {
         System.out.println("Has Froilanda mounted the cropduster? " + cropDuster.isMounted());
 
         Field field = farm.getField();
-
-        Croprow cropRow = (Croprow) field.getCropRows().get(0);
-        cropDuster.fertilize(cropRow);
-
-        System.out.println("Have the crops been fertilized? " + cropRow.isFertilized());
+        for (int i = 0; i < field.getCropRows().size(); i++) {
+            Croprow cropRow = (Croprow) field.getCropRows().get(i);
+            cropDuster.fertilize(cropRow);
+            System.out.println("Have the crops in crop row "+ Integer.valueOf(i+1) +" been fertilized? " + cropRow.isFertilized());
+        }
+        froilanda.disMount(cropDuster);
+        System.out.println("Is Froilanda still on the cropduster? " + cropDuster.isMounted());
 
         //then test Farmhouse was fed
         Assert.assertArrayEquals(froilanRation,froilan.getFoodEaten().toArray());
