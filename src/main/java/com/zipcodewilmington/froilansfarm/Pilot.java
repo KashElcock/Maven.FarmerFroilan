@@ -35,4 +35,12 @@ public class Pilot<F extends Person> extends Person implements Rider<AirCraft>{
     public void disMount(AirCraft airCraft) {
         airCraft.setMounted(false);
     }
+
+    public void mount(Rideable rideable) {
+
+    }
+
+    public void disMount(Rideable rideable) {
+
+    }
 }

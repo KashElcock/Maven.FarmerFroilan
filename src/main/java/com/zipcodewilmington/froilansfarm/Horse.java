@@ -16,6 +16,10 @@ public class Horse implements Rideable, Animal{
         return mounted;
     }
 
+    public void isRidden(Person person) {
+
+    }
+
     public void setMounted(boolean isMounted) {mounted = isMounted;}
 
     public String makeNoise() {

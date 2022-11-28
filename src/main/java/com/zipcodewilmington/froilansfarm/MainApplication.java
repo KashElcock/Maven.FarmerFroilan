@@ -13,7 +13,7 @@ public class MainApplication {
     public Farm setUpFarm() {
         Farm AnimalFarm = new Farm();
         Farmer Froilan = new Farmer();
-        Pilot<Farmer> Froilanda = new Pilot<Farmer>();
+        Pilot Froilanda = new Pilot ();
         AnimalFarm.setOwner(Froilan);
 
         FarmHouse MainHouse = new FarmHouse();
@@ -28,7 +28,7 @@ public class MainApplication {
         AnimalFarm.addVehicle(JohnDeere4440);
         AnimalFarm.addVehicle(JohnDeere4455);
 
-        Field Front40 = new Field();
+        Field<Croprow<? extends Crop>> Front40 = new Field<Croprow<? extends Crop>>();
         Front40.plant(new CornStalk());
         Front40.plant(new TomatoPlant());
         Front40.plant(new CarrotPlant());
@@ -55,8 +55,30 @@ public class MainApplication {
 
         return AnimalFarm;
     }
-
+    public static Farm morningRoutine() {
+        MainApplication run = new MainApplication();
+        Farm farm = run.setUpFarm();
+        FarmHouse farmHouse = farm.getFarmhouse();
+        Farmer froilan = (Farmer) farmHouse.get(0);
+        Pilot froilanda = (Pilot) farmHouse.get(1);
+        Edible[] froilanRation = {new EarCorn(), new TomatoPlant(), new TomatoPlant(),
+                new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg(), new EdibleEgg()};
+        Edible[] froilandaRation = {new EarCorn(), new EarCorn(), new TomatoPlant(),
+                new EdibleEgg(), new EdibleEgg()};
+        EarCorn[] horseRation = {new EarCorn(), new EarCorn(), new EarCorn()};
+        farmHouse.feedHouseMember(froilan, froilanRation);
+        farmHouse.feedHouseMember(froilanda, froilandaRation);
+        for (Stable stable : farm.getStables()) stable.feedHorses(horseRation);
+        for (Stable stable : farm.getStables()) {
+            for (Horse horse : stable) {
+                froilan.mount(horse);
+                froilan.disMount(horse);
+                froilanda.mount(horse);
+                froilanda.disMount(horse);
+            }
+        }
+        return farm;
+    }
     public void deleteFarm() {
-
     }
 }

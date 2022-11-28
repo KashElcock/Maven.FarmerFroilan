@@ -3,7 +3,7 @@ package com.zipcodewilmington.froilansfarm;
 public class Croprow <T extends Crop>{
 
     private T crop;
-    boolean fertilized = false;
+    public boolean fertilized = false;
 
     public Croprow(){
     }
@@ -14,6 +14,9 @@ public class Croprow <T extends Crop>{
 
     public void fertilize() {
         this.fertilized = true;
+    }
+    public boolean isFertilized() {
+        return fertilized;
     }
 
     public void plantCrop(T crop){
