@@ -18,6 +18,7 @@ public class WednesdayTest {
         FarmHouse house = farm.getFarmhouse();
         Farmer froilan = (Farmer) house.get(0);
         Pilot<Farmer> froilanda = (Pilot<Farmer>) house.get(1);
+
         //when a day is simulated
         EarCorn[] horseMealExpected = {new EarCorn(), new EarCorn(), new EarCorn()};
         for (Stable stable: farm.getStables()
@@ -38,6 +39,7 @@ public class WednesdayTest {
         Edible[] expected2 = {new EarCorn(), new EarCorn(), new TomatoPlant(),
                 new EdibleEgg(), new EdibleEgg()};
         house.feedHouseMember(froilanda,expected2);
+
         //then test Farmhouse was fed
         Assert.assertArrayEquals(expected1,froilan.getFoodEaten().toArray());
         Assert.assertArrayEquals(expected2,froilanda.getFoodEaten().toArray());
