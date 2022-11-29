@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Croprow <T extends Crop>{
+import java.util.ArrayList;
+
+public class Croprow <T extends Crop> extends ArrayList<T> {
 
     private T crop;
     boolean fertilized = false;
